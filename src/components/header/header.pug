@@ -1,0 +1,35 @@
+mixin header(data)
+
+	- data = data || {}
+
+	//- модификатор
+	+modif('header', data.mod)
+
+	//- префикс
+	+prefix('header', data.prefix)
+
+	//- атрибуты
+	- attr = data.attr || ''
+
+	div(class=`header${pr}${mod}`)&attributes(attr)
+
+		.header__wrapper(id="section1")
+			.header__logo 
+				a(href="#") Mntn
+		
+			.header__nav.nav
+				ul.nav__list 
+					li.nav__item
+						a.nav__item--link(href="#") Equipment
+					li.nav__item
+						a.nav__item--link(href="#") About us 
+					li.nav__item
+						a.nav__item--link(href="#") Blog 
+			
+			.header__account.account
+				a.account__link(href="#")
+					svg 
+						use(xlink:href="../assets/images/sprite.svg#cart")
+					| Account
+
+						
